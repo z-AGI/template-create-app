@@ -1,0 +1,29 @@
+{
+    "name": "scaffolding",
+    "version": "0.0.1",
+    "description": "脚手架",
+    "type": "module",
+    "main": "dist/index.js",
+    "scripts": {
+        "dev": "npx tsx test/index.ts -y",
+        "serve": "npx tsx test/serve.ts -y",
+        "test": "npx tsx test/test.ts -y"
+    },
+    "keywords": [
+        "RAG",
+        "LLM",
+        "AI"
+    ],
+    "author": "weizuxiao",
+    "license": "MIT",
+    "dependencies": {
+        "@langchain/core": "^0.3.40",
+        "@langchain/langgraph": "^0.2.46",
+        "@langchain/ollama": "^0.2.0",
+        "langchain": "^0.3.18"
+    },
+    "devDependencies": {
+        "@types/express": "^5.0.0",
+        "express": "^4.21.2"
+    }
+}
