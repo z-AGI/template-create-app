@@ -5,6 +5,12 @@ const app = express();
 
 app.post('/stream', (req: Request, res: Response) => {
 
+    // 设置响应头
+    res.setHeader('Content-Type', 'text/event-stream; charset=utf-8');
+    res.setHeader('Transfer-Encoding', 'chunked');
+    res.setHeader('Connection', 'keep-alive')
+    res.flushHeaders()
+
     req.on('data', async (chunk: Buffer) => {
         const params = {
             ...JSON.parse(chunk.toString()),
@@ -17,7 +23,9 @@ app.post('/stream', (req: Request, res: Response) => {
             recursionLimit: 50
         };
 
-        await graph.stream(params, config)
+        await graph.invoke(params, config)
+
+        res.end()
 
     });
 
