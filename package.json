@@ -5,15 +5,11 @@
     "type": "module",
     "main": "dist/index.js",
     "scripts": {
-        "dev": "npx tsx test/index.ts -y",
-        "serve": "npx tsx watch test/serve.ts -y",
-        "test": "npx tsx test/test.ts -y"
+        "dev": "npx tsx test/index.ts",
+        "serve": "npx tsx watch test/serve.ts",
+        "test": "npx tsx test/test.ts"
     },
-    "keywords": [
-        "RAG",
-        "LLM",
-        "AI"
-    ],
+    "keywords": ["关键词"],
     "author": "weizuxiao",
     "license": "MIT",
     "dependencies": {
