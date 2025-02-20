@@ -1,13 +1,20 @@
 {
-    "name": "tool",
+    "name": "example",
     "version": "0.0.1",
     "description": "示例工程",
     "type": "module",
     "main": "dist/index.js",
+    "files": [
+        "dist",
+        "src",
+        "README.md"
+    ],
     "scripts": {
         "dev": "npx tsx test/index.ts",
         "serve": "npx tsx watch test/serve.ts",
-        "test": "npx tsx test/test.ts"
+        "test": "npx tsx test/test.ts",
+        "build": "tsc",
+        "package": "tsc & npm link"
     },
     "keywords": ["关键词"],
     "author": "weizuxiao",

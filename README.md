@@ -63,3 +63,33 @@ npm run test
 ```bash
 yarn test
 ```
+
+## ‼️ 使用说明
+
+### 📝 编译
+
+#### 使用 npm
+
+```bash
+npm run build
+```
+
+#### 使用 yarn
+
+```bash
+yarn build
+```
+
+### 🗂️ 打包
+
+#### 使用 npm
+
+```bash
+npm run package
+```
+
+#### 使用 yarn
+
+```bash
+yarn package
+```
