@@ -30,15 +30,57 @@ npm install
 yarn
 ```
 
-### ✨ 单元测试
+### ✨ 安装
 
-##### 使用 npm
+#### 使用 npm
+
+```bash
+npm install
+```
+
+#### 使用 yarn
+
+```bash
+yarn
+```
+
+### 🍖 安装体验
+
+#### 使用 npm
 
 ```bash
 npm run test
 ```
 
-##### 使用 yarn
+#### 使用 yarn
+
+```bash
+yarn test
+```
+
+### 👑 启动服务
+
+#### 使用 npm
+
+```bash
+npm run start
+```
+
+#### 使用 yarn
+
+```bash
+yarn start
+```
+
+### 🤡 测试应用
+
+#### 使用 npm
+
+```bash
+npm run test
+```
+
+#### 使用 yarn
 
 ```bash
 yarn test
