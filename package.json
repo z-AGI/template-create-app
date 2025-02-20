@@ -1,13 +1,11 @@
 {
-    "name": "template",
+    "name": "tool",
     "version": "0.0.1",
     "description": "示例工程",
     "type": "module",
     "main": "dist/index.js",
     "scripts": {
-        "dev": "npx tsx test/index.ts -y",
-        "serve": "npx tsx watch test/serve.ts -y",
-        "test": "npx tsx test/test.ts -y"
+        "test": "npx tsx test/index.ts -y"
     },
     "keywords": [
         "RAG",
