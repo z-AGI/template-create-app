@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express';
 import { graph } from '../src/graph';
+import { config } from './config';
 
 const app = express();
 
@@ -16,12 +17,6 @@ app.post('/stream', (req: Request, res: Response) => {
             ...JSON.parse(chunk.toString()),
             response: res
         }
-
-        const config = {
-            configurable: { thread_id: "test" },
-            streamMode: "updates" as const,
-            recursionLimit: 50
-        };
 
         await graph.invoke(params, config)
 

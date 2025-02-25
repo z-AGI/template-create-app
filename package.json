@@ -21,6 +21,8 @@
         "@langchain/core": "^0.3.40",
         "@langchain/langgraph": "^0.2.46",
         "@langchain/ollama": "^0.2.0",
+        "@types/js-yaml": "^4.0.9",
+        "js-yaml": "^4.1.0",
         "langchain": "^0.3.18"
     },
     "devDependencies": {
