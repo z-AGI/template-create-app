@@ -6,6 +6,24 @@
 
 【请完善功能介绍】
 
+### 创建 docker 网络
+
+```bash
+docker network create --driver bridge ai
+```
+
+### 打包镜像
+
+```bash
+docker build -t [name]:latest .
+```
+
+### 运行容器
+
+```bash
+docker run -itd -v `pwd`/config.yaml:/app/config.yaml --network ai --hostname [name] [name]:latest
+```
+
 ## ‼️ 开发说明
 
 ### ✨ 安装依赖

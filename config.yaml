@@ -1,5 +1,24 @@
-port: 3000
-network: ai
-ignores:
-  - discovery
-  - proxy
+app:
+  profile:
+    name: 应用命名
+    icon: 应用图标
+    title: 应用名称
+    describe: 应用简介
+    author: 作者名
+    version: 版本号
+  api:
+    method: POST
+    url: /invoke
+    headers:
+      - name: Content-Type
+        title: 内容格式
+        require: true
+        describe: 需指定为`application/json`。
+        default-value: application/json
+    body:
+      - name: input
+        title: 用户输入
+        type: string
+        require: true
+        describe: 根据用户输入生成内容
+        default-value: ''
