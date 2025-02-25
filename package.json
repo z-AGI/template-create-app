@@ -10,13 +10,11 @@
         "README.md"
     ],
     "scripts": {
-        "dev": "npx tsx test/index.ts",
-        "serve": "npx tsx watch test/serve.ts",
-        "test": "npx tsx test/test.ts",
+        "start": "npx tsx watch test/serve.ts",
         "build": "tsc",
         "package": "tsc & npm link"
     },
-    "keywords": ["关键词"],
+    "keywords": [],
     "author": "weizuxiao",
     "license": "MIT",
     "dependencies": {
