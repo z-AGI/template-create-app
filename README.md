@@ -24,6 +24,18 @@ docker build -t [name]:latest .
 docker run -itd -v `pwd`/config.yaml:/app/config.yaml --network ai --hostname [name] [name]:latest
 ```
 
+### 下架
+
+```bash
+docker ps | grep '[name]' | awk '{print $1}' | xargs docker rm -f
+```
+
+### 删除镜像
+
+```bash
+docker images | grep '[name]' | awk '{print $3}' | xargs docker rmi -f
+```
+
 ## ‼️ 开发说明
 
 ### ✨ 安装依赖
