@@ -2,8 +2,10 @@ FROM node:18-alpine
 
 USER root
 
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
+
 RUN apk update && apk upgrade
-RUN apk add --no-cache curl npm
+RUN apk add --no-cache curl npm make gcc g++ python3 linux-headers
 
 WORKDIR /app
 
