@@ -123,3 +123,49 @@ npm run package
 ```bash
 yarn package
 ```
+
+## FQA
+
+### 解决 Docker 被墙问题
+
+#### 当前问题
+
+```bash
+docker pull node:18-alpine
+Error response from daemon: Get "https://registry-1.docker.io/v2/": net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)
+```
+
+#### 解决方式
+
+1. 编辑`daemon.json`文件
+
+```bash
+vim /etc/docker/daemon.json
+```
+
+2. 写入并保存如下内容
+
+```json
+{
+  "registry-mirrors": [
+    "https://registry.docker-cn.com",
+    "https://pee6w651.mirror.aliyuncs.com"
+  ],
+  "insecure-registries":[
+    "10.0.0.12:5000"
+  ]
+}
+```
+
+3. 重载配置并重启`docker`
+
+```bash
+systemctl daemon-reload
+systemctl restart docker
+```
+
+4. 配置`docker`自启动
+
+```bash
+systemctl enable docker
+```
