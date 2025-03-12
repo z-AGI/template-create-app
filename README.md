@@ -1,39 +1,35 @@
-# 【标题】
+# 小测生成/判分 AI 智能体
 
-> 【技术方案设计链接】
+> [技术设计方案]()
 
 ## 🌈 功能介绍
 
-【请完善功能介绍】
-
-### 创建 docker 网络
-
-```bash
-docker network create --driver bridge ai
-```
+- 生成知识问题
+- 生成判分标准
+- AI 自动判分
 
 ### 打包镜像
 
 ```bash
-docker build -t [name]:latest .
+docker build -t quiz:latest .
 ```
 
 ### 运行容器
 
 ```bash
-docker run -itd -v `pwd`/config.yaml:/app/config.yaml --network ai --hostname [name] [name]:latest
+docker run --restart=always -itd -v `pwd`/config.yaml:/app/config.yaml -v`pwd`/package.json:/app/package.json -v `pwd`/src/:/app/src/ -v `pwd`/test/:/app/test/ -v `pwd`/logs/:/app/logs/ --network ai-agent --hostname quiz quiz:latest
 ```
 
 ### 下架
 
 ```bash
-docker ps | grep '[name]' | awk '{print $1}' | xargs docker rm -f
+docker ps | grep 'quiz' | awk '{print $1}' | xargs docker rm -f
 ```
 
 ### 删除镜像
 
 ```bash
-docker images | grep '[name]' | awk '{print $3}' | xargs docker rmi -f
+docker images | grep 'quiz' | awk '{print $3}' | xargs docker rmi -f
 ```
 
 ## ‼️ 开发说明
@@ -122,50 +118,4 @@ npm run package
 
 ```bash
 yarn package
-```
-
-## FQA
-
-### 解决 Docker 被墙问题
-
-#### 当前问题
-
-```bash
-docker pull node:18-alpine
-Error response from daemon: Get "https://registry-1.docker.io/v2/": net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)
-```
-
-#### 解决方式
-
-1. 编辑`daemon.json`文件
-
-```bash
-vim /etc/docker/daemon.json
-```
-
-2. 写入并保存如下内容
-
-```json
-{
-  "registry-mirrors": [
-    "https://registry.docker-cn.com",
-    "https://pee6w651.mirror.aliyuncs.com"
-  ],
-  "insecure-registries":[
-    "10.0.0.12:5000"
-  ]
-}
-```
-
-3. 重载配置并重启`docker`
-
-```bash
-systemctl daemon-reload
-systemctl restart docker
-```
-
-4. 配置`docker`自启动
-
-```bash
-systemctl enable docker
 ```

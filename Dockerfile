@@ -15,8 +15,7 @@ RUN echo `npm config get registry`
 RUN npm install yarn 
 
 COPY . .
-# RUN yarn add --dev typescript tsx
-RUN npm install tsx@4.19.3 --save-dev
+
 RUN yarn
 
 EXPOSE 3000

@@ -1,32 +1,47 @@
 {
-    "name": "example",
-    "version": "0.0.1",
-    "description": "示例工程",
-    "type": "module",
-    "main": "dist/index.js",
-    "files": [
-        "dist",
-        "src",
-        "README.md"
-    ],
-    "scripts": {
-        "start": "npx tsx watch test/serve.ts",
-        "build": "tsc",
-        "package": "tsc & npm link"
-    },
-    "keywords": [],
-    "author": "weizuxiao",
-    "license": "MIT",
-    "dependencies": {
-        "@langchain/core": "^0.3.40",
-        "@langchain/langgraph": "^0.2.46",
-        "@langchain/ollama": "^0.2.0",
-        "@types/js-yaml": "^4.0.9",
-        "js-yaml": "^4.1.0",
-        "langchain": "^0.3.18"
-    },
-    "devDependencies": {
-        "@types/express": "^5.0.0",
-        "express": "^4.21.2"
-    }
+  "name": "quiz-agent",
+  "version": "0.0.1",
+  "description": "quiz AI智能助手",
+  "type": "module",
+  "main": "dist/src/server.js",
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
+  "scripts": {
+    "start": "npx tsx watch src/server.ts",
+    "jest": "jest",
+    "build": "tsc",
+    "package": "tsc & npm link"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
+  },
+  "keywords": [],
+  "author": "weizuxiao",
+  "license": "MIT",
+  "dependencies": {
+    "@langchain/core": "^0.3.40",
+    "@langchain/langgraph": "^0.2.46",
+    "js-yaml": "^4.1.0",
+    "langchain": "^0.3.18",
+    "mongodb": "^6.14.2",
+    "openai": "^4.85.4",
+    "remark-gfm": "^4.0.1",
+    "remark-parse": "^11.0.0",
+    "unified": "^11.0.5"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^22.13.9",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "sqlite3": "^5.1.7",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3"
+  }
 }
